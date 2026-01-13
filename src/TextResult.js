@@ -298,152 +298,144 @@ function TextResult({ onNavigate, currentPage, textData, whiteboardMode = false 
           )}
         </div>
         
-        <div className="lr-tabs-right">
+        <div className="tr-tabs-right">
           {isWhiteboardMode ? (
             <>
             <button 
-                className="lr-action-btn layout-btn"
+                className="tr-action-btn layout-btn"
                 onClick={() => alert('화면구성')}
                 title="화면구성"
               >
                 📐 화면구성
               </button>
               <button 
-                className="lr-action-btn fullscreen-btn"
+                className="tr-action-btn fullscreen-btn"
                 onClick={() => alert('전체화면')}
                 title="전체화면"
               >
                 ⛶ 전체화면
               </button>
               <button 
-                className="lr-action-btn save-btn"
+                className="tr-action-btn save-btn"
                 onClick={() => alert('저장하기')}
                 title="저장하기"
               >
                 💾 저장하기
               </button>
-              <div className="lr-more-dropdown-wrapper" ref={moreDropdownRef}>
+              <div className="tr-more-dropdown-wrapper" ref={moreDropdownRef}>
                 {showMoreDropdown && (
-                  <div className="lr-more-dropdown">
+                  <div className="tr-more-dropdown">
                     <button 
-                      className="lr-dropdown-item"
+                      className="tr-dropdown-item"
                       onClick={() => {
                         setShowMoreDropdown(false);
                         alert('공유 기능');
                       }}
                     >
-                      <span className="lr-dropdown-icon">✈️</span>
+                      <span className="tr-dropdown-icon">✈️</span>
                       <span>공유</span>
                     </button>
                     <button 
-                      className="lr-dropdown-item"
+                      className="tr-dropdown-item"
                       onClick={() => {
                         setShowMoreDropdown(false);
                         alert('설정');
                       }}
                     >
-                      <span className="lr-dropdown-icon">⚙️</span>
+                      <span className="tr-dropdown-icon">⚙️</span>
                       <span>설정</span>
                     </button>
                   </div>
                 )}
               </div>
             </>
+          ) : isEditMode ? (
+            // 편집 모드: 저장하기 버튼만 표시
+            <button 
+              className="tr-action-btn save-btn"
+              onClick={() => {
+                setIsEditMode(false);
+                alert('변경사항이 저장되었습니다.');
+              }}
+              title="저장하기"
+            >
+              💾 저장하기
+            </button>
           ) : (
+            // 보기 모드: 편집하기, 내려받기, 문제 만들기, 더보기 표시
             <>
-              {isEditMode ? (
-                // 편집 모드일 때는 저장하기 버튼만 표시
+              <button 
+                className="tr-action-btn edit-btn"
+                onClick={() => setIsEditMode(true)}
+                title="편집하기"
+              >
+                ✂️ 편집하기
+              </button>
+              <button 
+                className="tr-action-btn download-btn"
+                onClick={() => alert('내려받기')}
+                title="내려받기"
+              >
+                ⬇️ 내려받기
+              </button>
+              <button 
+                className="tr-action-btn problem-btn"
+                onClick={handleCreateWorkbook}
+                title="문제 만들기"
+              >
+                ✏️ 문제 만들기
+              </button>
+
+
+              <div className="tr-more-dropdown-wrapper" ref={moreDropdownRef}>
                 <button 
-                  className="lr-action-btn edit-btn"
-                  onClick={() => {
-                    setIsEditMode(false);
-                    alert('변경사항이 저장되었습니다.');
-                  }}
-                  title="저장하기"
-                  style={{
-                    background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
-                    color: 'white',
-                    border: 'none'
-                  }}
+                  className="tr-action-btn more-btn"
+                  onClick={() => setShowMoreDropdown(!showMoreDropdown)}
+                  title="더보기"
                 >
-                  💾 저장하기
+                  ⋯ 더보기
                 </button>
-              ) : (
-                <>
-                  <button 
-                    className="lr-action-btn edit-btn"
-                    onClick={() => setIsEditMode(true)}
-                    title="편집하기"
-                  >
-                    ✂️ 편집하기
-                  </button>
-                  <button 
-                    className="lr-action-btn download-btn"
-                    onClick={() => alert('내려받기')}
-                    title="내려받기"
-                  >
-                    ⬇️ 내려받기
-                  </button>
-                  <button 
-                    className="lr-action-btn problem-btn"
-                    onClick={handleCreateWorkbook}
-                    title="문제 만들기"
-                  >
-                    ✏️ 문제 만들기
-                  </button>
-
-
-                  <div className="lr-more-dropdown-wrapper" ref={moreDropdownRef}>
+                {showMoreDropdown && (
+                  <div className="tr-more-dropdown">
                     <button 
-                      className="lr-action-btn more-btn"
-                      onClick={() => setShowMoreDropdown(!showMoreDropdown)}
-                      title="더보기"
+                      className="tr-dropdown-item"
+                      onClick={() => {
+                        setShowMoreDropdown(false);
+                        alert('공유 기능');
+                      }}
                     >
-                      ⋯ 더보기
+                      <span className="tr-dropdown-icon">✈️</span>
+                      <span>공유</span>
                     </button>
-                    {showMoreDropdown && (
-                      <div className="lr-more-dropdown">
-                        <button 
-                          className="lr-dropdown-item"
-                          onClick={() => {
-                            setShowMoreDropdown(false);
-                            alert('공유 기능');
-                          }}
-                        >
-                          <span className="lr-dropdown-icon">✈️</span>
-                          <span>공유</span>
-                        </button>
-                        <button 
-                          className="lr-dropdown-item"
-                          onClick={() => {
-                            setShowMoreDropdown(false);
-                            setIsWhiteboardMode(true);
-                          }}
-                        >
-                          <span className="lr-dropdown-icon">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                              <rect x="2" y="3" width="20" height="14" rx="2" />
-                              <line x1="8" y1="21" x2="16" y2="21" />
-                              <line x1="12" y1="17" x2="12" y2="21" />
-                            </svg>
-                          </span>
-                          <span>판서</span>
-                        </button>
-                        <button 
-                          className="lr-dropdown-item"
-                          onClick={() => {
-                            setShowMoreDropdown(false);
-                            alert('설정');
-                          }}
-                        >
-                          <span className="lr-dropdown-icon">⚙️</span>
-                          <span>설정</span>
-                        </button>
-                      </div>
-                    )}
+                    <button 
+                      className="tr-dropdown-item"
+                      onClick={() => {
+                        setShowMoreDropdown(false);
+                        setIsWhiteboardMode(true);
+                      }}
+                    >
+                      <span className="tr-dropdown-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <rect x="2" y="3" width="20" height="14" rx="2" />
+                          <line x1="8" y1="21" x2="16" y2="21" />
+                          <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                      </span>
+                      <span>판서</span>
+                    </button>
+                    <button 
+                      className="tr-dropdown-item"
+                      onClick={() => {
+                        setShowMoreDropdown(false);
+                        alert('설정');
+                      }}
+                    >
+                      <span className="tr-dropdown-icon">⚙️</span>
+                      <span>설정</span>
+                    </button>
                   </div>
-                </>
-              )}
+                )}
+              </div>
             </>
           )}
         </div>

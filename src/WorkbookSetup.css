@@ -1,0 +1,549 @@
+.workbook-setup-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+}
+
+/* 메인 컨테이너 */
+.ws-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.ws-content {
+  display: flex;
+  justify-content: center;
+}
+
+/* 폼 */
+.ws-form {
+  width: 100%;
+  max-width: 700px;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.ws-form-group {
+  margin-bottom: 32px;
+}
+
+.ws-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.required {
+  color: #ef4444;
+}
+
+.ws-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.ws-input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+/* 학습 대상 그리드 - TextSetup과 동일한 스타일 */
+.ws-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.ws-audience-btn {
+  padding: 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.ws-audience-btn:hover {
+  border-color: #8b5cf6;
+}
+
+.ws-audience-btn.active {
+  border-color: #8b5cf6;
+  background: #f5f3ff;
+  color: #8b5cf6;
+}
+
+.ws-audience-label {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.ws-audience-age {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.ws-audience-btn.active .ws-audience-age {
+  color: #8b5cf6;
+}
+
+/* 과목 그리드 - TextSetup의 주제 영역과 동일한 스타일 */
+.ws-subject-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.ws-subject-btn {
+  padding: 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.ws-subject-btn:hover {
+  border-color: #8b5cf6;
+}
+
+.ws-subject-btn.active {
+  border-color: #8b5cf6;
+  background: #f5f3ff;
+  color: #8b5cf6;
+  font-weight: 600;
+}
+
+/* 문항 수 입력 - TextSetup의 문단 수와 동일한 스타일 */
+.ws-number-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 200px;
+}
+
+.ws-number-input {
+  width: 100%;
+  padding: 12px 50px 12px 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.ws-number-input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.ws-unit {
+  position: absolute;
+  right: 14px;
+  font-size: 14px;
+  color: #6b7280;
+  pointer-events: none;
+}
+
+/* 문제 유형 그리드 */
+.ws-type-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.ws-type-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ws-type-btn:hover {
+  border-color: #8b5cf6;
+}
+
+.ws-type-btn.active {
+  border-color: #8b5cf6;
+  background: #f5f3ff;
+}
+
+.ws-type-icon {
+  font-size: 18px;
+}
+
+.ws-type-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #374151;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* 탭 스타일 */
+.ws-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0;
+}
+
+.ws-tab-btn {
+  padding: 12px 24px;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #6b7280;
+  border-bottom: 3px solid transparent;
+  position: relative;
+  bottom: -2px;
+}
+
+.ws-tab-btn:hover {
+  color: #8b5cf6;
+}
+
+.ws-tab-btn.active {
+  color: #8b5cf6;
+  border-bottom-color: #8b5cf6;
+}
+
+/* 탭 컨텐츠 */
+.ws-tab-content {
+  margin-bottom: 32px;
+}
+
+/* AI 주제 섹션 */
+.ws-ai-section {
+  margin-bottom: 24px;
+}
+
+.ws-ai-desc {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 16px 0;
+}
+
+.ws-topic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.ws-topic-card {
+  position: relative;
+  padding: 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ws-topic-card:hover {
+  border-color: #8b5cf6;
+}
+
+.ws-topic-card.selected {
+  border-color: #8b5cf6;
+  background: #f5f3ff;
+}
+
+.ws-topic-check {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #8b5cf6;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #8b5cf6;
+}
+
+.ws-topic-card.selected .ws-topic-check {
+  background: #8b5cf6;
+  color: white;
+}
+
+.ws-topic-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.ws-topic-category {
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* 업로드 섹션 */
+.ws-upload-section {
+  margin-bottom: 24px;
+}
+
+.ws-upload-area {
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 40px 20px;
+  background: white;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ws-upload-area:hover {
+  border-color: #8b5cf6;
+  background: #f9fafb;
+}
+
+.ws-file-input {
+  display: none;
+}
+
+.upload-icon-container {
+  position: relative;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cloud-upload-icon {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cloud-upload-icon:hover {
+  transform: translateY(-5px);
+}
+
+.cloud-upload-icon:hover svg circle {
+  fill: #E0E7FF;
+}
+
+.cloud-upload-icon:hover svg path {
+  stroke: #3B82F6;
+}
+
+.cloud-upload-icon svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+}
+
+.upload-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.upload-info {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 8px 0;
+}
+
+.upload-warning {
+  font-size: 13px;
+  color: #ef4444;
+  margin: 0;
+}
+
+/* 프로젝트 섹션 */
+.ws-project-section {
+  margin-bottom: 24px;
+}
+
+.ws-project-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ws-project-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: white;
+}
+
+.ws-project-item:hover {
+  border-color: #8b5cf6;
+  background: #f9fafb;
+}
+
+.ws-project-item.selected {
+  border-color: #8b5cf6;
+  background: #f5f3ff;
+}
+
+.ws-project-radio input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #8b5cf6;
+}
+
+.ws-project-content {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ws-project-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.ws-project-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.ws-project-type-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: white;
+}
+
+/* 푸터 */
+.ws-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 32px;
+  border-top: 2px solid #f3f4f6;
+  margin-top: 40px;
+}
+
+.ws-btn-cancel,
+.ws-btn-create {
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ws-btn-cancel {
+  background: white;
+  border: 2px solid #e5e7eb;
+  color: #6b7280;
+}
+
+.ws-btn-cancel:hover {
+  border-color: #d1d5db;
+  background: #f9fafb;
+}
+
+.ws-btn-create {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  color: white;
+}
+
+.ws-btn-create:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .ws-main {
+    padding: 40px 20px;
+  }
+
+  .ws-form {
+    padding: 24px 20px;
+  }
+
+  .ws-audience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ws-subject-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ws-type-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ws-topic-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ws-footer {
+    flex-direction: column;
+  }
+
+  .ws-btn-cancel,
+  .ws-btn-create {
+    width: 100%;
+  }
+
+  .ws-tabs {
+    overflow-x: auto;
+  }
+
+  .ws-number-input-wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .ws-subject-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ws-type-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ws-topic-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,314 @@
+.whiteboard-setup-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+}
+
+/* 메인 컨텐츠 */
+.ws-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.ws-content {
+  display: flex;
+  justify-content: center;
+}
+
+/* 폼 */
+.ws-form {
+  width: 100%;
+  max-width: 700px;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.ws-form-group {
+  margin-bottom: 32px;
+}
+
+.ws-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.required {
+  color: #ef4444;
+}
+
+.ws-input,
+.ws-select,
+.ws-tag-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.ws-input:focus,
+.ws-select:focus,
+.ws-tag-input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+/* 업로드 영역 */
+.ws-upload-area {
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 60px 20px;
+  background: white;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ws-upload-area:hover {
+  border-color: #8b5cf6;
+  background: #f9fafb;
+}
+
+.upload-icon-container {
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cloud-upload-icon {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cloud-upload-icon:hover {
+  transform: translateY(-5px);
+}
+
+.cloud-upload-icon:hover svg circle {
+  fill: #E0E7FF;
+}
+
+.cloud-upload-icon:hover svg path {
+  stroke: #3B82F6;
+}
+
+.cloud-upload-icon svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+}
+
+.upload-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.upload-info {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* 태그 입력 */
+.ws-tag-input-wrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.ws-tag-input {
+  flex: 1;
+}
+
+.ws-tag-add-btn {
+  padding: 14px 24px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ws-tag-add-btn:hover {
+  background: #2563eb;
+}
+
+.ws-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.ws-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #f3f4f6;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.ws-tag-remove {
+  border: none;
+  background: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  font-size: 16px;
+}
+
+.ws-tag-remove:hover {
+  color: #ef4444;
+}
+
+/* 토글 스위치 */
+.ws-toggle-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+}
+
+.toggle-info {
+  flex: 1;
+  text-align: left;
+}
+
+.toggle-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 4px 0;
+  text-align: left;
+}
+
+.toggle-desc {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  text-align: left;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e5e7eb;
+  transition: 0.3s;
+  border-radius: 34px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+  transform: translateX(24px);
+}
+
+/* 푸터 */
+.ws-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 32px;
+  border-top: 2px solid #f3f4f6;
+  margin-top: 40px;
+}
+
+.ws-btn-cancel,
+.ws-btn-create {
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ws-btn-cancel {
+  background: white;
+  border: 2px solid #e5e7eb;
+  color: #6b7280;
+}
+
+.ws-btn-cancel:hover {
+  border-color: #d1d5db;
+  background: #f9fafb;
+}
+
+.ws-btn-create {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  color: white;
+}
+
+.ws-btn-create:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .ws-main {
+    padding: 40px 20px;
+  }
+
+  .ws-form {
+    padding: 24px 20px;
+  }
+
+  .ws-footer {
+    flex-direction: column;
+  }
+
+  .ws-btn-cancel,
+  .ws-btn-create {
+    width: 100%;
+  }
+}

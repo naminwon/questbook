@@ -1,0 +1,476 @@
+.text-setup-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+}
+
+/* ë©”ì¸ ì»¨í…ì¸  */
+.ts-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.ts-content {
+  display: flex;
+  justify-content: center;
+}
+
+/* í¼ */
+.ts-form {
+  width: 100%;
+  max-width: 700px;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.ts-form-group {
+  margin-bottom: 32px;
+}
+
+.ts-form-group-inline {
+  flex: 1;
+}
+
+.ts-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.ts-sublabel {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.required {
+  color: #ef4444;
+}
+
+.ts-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.ts-input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+/* ì˜ì—­ ì„ íƒ ê·¸ë¦¬ë“œ */
+.ts-domain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.ts-domain-btn {
+  padding: 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.ts-domain-btn:hover {
+  border-color: #8b5cf6;
+}
+
+.ts-domain-btn.active {
+  border-color: #8b5cf6;
+  background: #f5f3ff;
+  color: #8b5cf6;
+  font-weight: 600;
+}
+
+/* ì£¼ì œ ì˜ˆì œ */
+.ts-examples {
+  margin-top: 16px;
+}
+
+.ts-examples-label {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+/* 2í–‰ 3ì—´ ê·¸ë¦¬ë“œ */
+.ts-examples-grid-new {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.ts-example-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 70px;
+}
+
+.ts-example-card:hover {
+  border-color: #8b5cf6;
+  background: #f9fafb;
+  transform: translateY(-2px);
+}
+
+.ts-example-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.ts-example-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+
+.ts-example-domain {
+  font-size: 11px;
+  font-weight: 600;
+  color: #8b5cf6;
+}
+
+.ts-example-text {
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.4;
+}
+
+/* ê¸€ì˜ ì¢…ë¥˜ ê·¸ë¦¬ë“œ */
+.ts-texttype-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.ts-texttype-btn {
+  padding: 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.ts-texttype-btn:hover {
+  border-color: #8b5cf6;
+}
+
+.ts-texttype-btn.active {
+  border-color: #8b5cf6;
+  background: #f5f3ff;
+  color: #8b5cf6;
+  font-weight: 600;
+}
+
+/* ë¬¸ë‹¨ìˆ˜, ê¸€ìžìˆ˜, ë‚œì´ë„ í–‰ */
+.ts-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.ts-number-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ts-number-input {
+  width: 100%;
+  padding: 12px 50px 12px 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.ts-number-input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.ts-unit {
+  position: absolute;
+  right: 14px;
+  font-size: 14px;
+  color: #6b7280;
+  pointer-events: none;
+}
+
+.ts-difficulty-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.ts-difficulty-btn {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.ts-difficulty-btn:hover {
+  border-color: #8b5cf6;
+}
+
+.ts-difficulty-btn.active {
+  border-color: #8b5cf6;
+  background: #f5f3ff;
+  color: #8b5cf6;
+  font-weight: 600;
+}
+
+/* 학습 대상 그리드 */
+.ts-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.ts-audience-btn {
+  padding: 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.ts-audience-btn:hover {
+  border-color: #8b5cf6;
+}
+
+.ts-audience-btn.active {
+  border-color: #8b5cf6;
+  background: #f5f3ff;
+  color: #8b5cf6;
+}
+
+.ts-audience-label {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.ts-audience-age {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.ts-audience-btn.active .ts-audience-age {
+  color: #8b5cf6;
+}
+
+
+/* ê¸°ë³¸ë¬¸í•­ ì„¹ì…˜ */
+.ts-question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.ts-question-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ts-question-count {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ts-count-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.ts-count-btn {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.ts-count-btn:hover {
+  border-color: #8b5cf6;
+}
+
+.ts-count-btn.active {
+  border-color: #8b5cf6;
+  background: #f5f3ff;
+  color: #8b5cf6;
+  font-weight: 600;
+}
+
+/* í† ê¸€ ìŠ¤ìœ„ì¹˜ */
+.ts-vocab-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ts-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ts-toggle {
+  position: relative;
+  width: 56px;
+  height: 28px;
+  background: #d1d5db;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+
+.ts-toggle.active {
+  background: #8b5cf6;
+}
+
+.ts-toggle-slider {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ts-toggle.active .ts-toggle-slider {
+  transform: translateX(28px);
+}
+
+.ts-toggle-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  min-width: 30px;
+}
+
+.ts-toggle.active + .ts-toggle-label {
+  color: #8b5cf6;
+}
+
+/* í‘¸í„° */
+.ts-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 32px;
+  border-top: 2px solid #f3f4f6;
+  margin-top: 40px;
+}
+
+.ts-btn-cancel,
+.ts-btn-create {
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ts-btn-cancel {
+  background: white;
+  border: 2px solid #e5e7eb;
+  color: #6b7280;
+}
+
+.ts-btn-cancel:hover {
+  border-color: #d1d5db;
+  background: #f9fafb;
+}
+
+.ts-btn-create {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  color: white;
+}
+
+.ts-btn-create:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+/* ë°˜ì‘í˜• */
+@media (max-width: 768px) {
+  .ts-main {
+    padding: 40px 20px;
+  }
+
+  .ts-form {
+    padding: 24px 20px;
+  }
+
+  .ts-domain-grid,
+  .ts-texttype-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ts-examples-grid-new {
+    grid-template-columns: 1fr;
+  }
+
+  .ts-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ts-footer {
+    flex-direction: column;
+  }
+
+  .ts-btn-cancel,
+  .ts-btn-create {
+    width: 100%;
+  }
+}

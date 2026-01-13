@@ -1,0 +1,490 @@
+.project-management-page {
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+/* 메인 컨테이너 */
+.pm-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 60px;
+}
+
+/* 카운트 섹션 */
+.pm-count-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.count-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pm-count {
+  font-size: 16px;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+/* 관리 버튼 */
+.manage-btn {
+  padding: 8px 20px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.manage-btn:hover {
+  border-color: #6366f1;
+  color: #6366f1;
+}
+
+.manage-btn.active {
+  background: #6366f1;
+  border-color: #6366f1;
+  color: white;
+}
+
+/* 전체 선택 버튼 */
+.select-all-btn {
+  padding: 8px 20px;
+  background: white;
+  border: 1px solid #6366f1;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6366f1;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.select-all-btn:hover {
+  background: #6366f1;
+  color: white;
+}
+
+/* 선택 삭제 버튼 */
+.delete-selected-btn {
+  padding: 8px 20px;
+  background: #ef4444;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.delete-selected-btn:hover {
+  background: #dc2626;
+}
+
+/* 검색 및 필터 행 */
+.pm-search-filter-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+/* 검색창 */
+.pm-search-box {
+  position: relative;
+  flex: 1;
+}
+
+.pm-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #9ca3af;
+}
+
+.pm-search-input {
+  width: 100%;
+  padding: 12px 16px 12px 44px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+  transition: all 0.2s;
+}
+
+.pm-search-input:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.pm-search-input::placeholder {
+  color: #9ca3af;
+}
+
+/* 필터 드롭다운 래퍼 */
+.pm-filter-dropdown-wrapper {
+  position: relative;
+}
+
+/* 필터 버튼 */
+.pm-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  min-width: 140px;
+  justify-content: space-between;
+}
+
+.pm-filter-btn:hover {
+  border-color: #d1d5db;
+}
+
+.pm-dropdown-arrow {
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+/* 드롭다운 메뉴 */
+.pm-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 180px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  z-index: 1000;
+  animation: dropdownFadeIn 0.15s ease-out;
+  border: 1px solid #f0f0f0;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pm-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.pm-dropdown-item:hover {
+  background: #f9fafb;
+}
+
+.pm-dropdown-item.active {
+  background: #eef2ff;
+  color: #6366f1;
+}
+
+.pm-type-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* 프로젝트 그리드 */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0f0f0;
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.project-card.selected {
+  border-color: #6366f1;
+  background: #f5f7ff;
+}
+
+/* 프로젝트 체크박스 */
+.project-checkbox {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 20;
+}
+
+.project-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #6366f1;
+}
+
+/* 서비스 칩 */
+.service-chip {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 6px 14px;
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 10;
+}
+
+/* 프로젝트 미리보기 */
+.project-preview {
+  height: 220px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.document-icon {
+  width: 110px;
+  height: 145px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  position: relative;
+}
+
+.doc-lines {
+  height: 3px;
+  background: linear-gradient(90deg, #dfe3e8 0%, #c1c8d1 100%);
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+
+.doc-logo {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+/* 프로젝트 정보 */
+.project-info {
+  padding: 16px 20px;
+}
+
+.project-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-date {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+/* 프로젝트 액션 */
+.project-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+
+.action-icon-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e5e7eb;
+  background: white;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.action-icon-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.action-icon-btn svg {
+  stroke: #6b7280;
+}
+
+.action-icon-btn:hover svg {
+  stroke: #6366f1;
+}
+
+/* 드롭다운 래퍼 */
+.dropdown-wrapper {
+  position: relative;
+}
+
+/* 액션 드롭다운 */
+.action-dropdown {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  right: 0;
+  min-width: 140px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 6px;
+  z-index: 1000;
+  animation: dropdownFadeIn 0.15s ease-out;
+  border: 1px solid #f0f0f0;
+}
+
+.action-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.action-dropdown-item:hover {
+  background: #f9fafb;
+}
+
+.dropdown-icon {
+  font-size: 16px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 반응형 */
+@media (max-width: 1400px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .pm-container {
+    padding: 30px 40px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pm-container {
+    padding: 20px 16px;
+  }
+
+  .pm-count-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .count-left {
+    flex-wrap: wrap;
+  }
+
+  .pm-search-filter-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pm-filter-btn {
+    width: 100%;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-preview {
+    height: 180px;
+  }
+
+  .document-icon {
+    width: 90px;
+    height: 120px;
+  }
+}
